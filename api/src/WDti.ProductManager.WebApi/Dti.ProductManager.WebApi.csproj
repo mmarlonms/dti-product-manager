@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+    <UserSecretsId>f5e9a8dd-f0d7-4b3a-b303-5c9400e4a600</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>N:\Projetos\Dti\WebApi\src\WDti.ProductManager.WebApi\Dti.ProductManager.WebApi.xml</DocumentationFile>
+    <NoWarn>1701;1702;CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.2105168" />
+    <PackageReference Include="MonteOlimpo.Base.ApiBoot" Version="1.0.5" />
+    <PackageReference Include="MonteOlimpo.Base.Core.CrossCutting" Version="1.0.0" />
+    <PackageReference Include="MonteOlimpo.Base.Core.Validations" Version="1.0.0" />
+    <PackageReference Include="MonteOlimpo.Base.Extensions" Version="1.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dti.ProductManager.Data\Dti.ProductManager.Data.csproj" />
+    <ProjectReference Include="..\Dti.ProductManager.Domain\Dti.ProductManager.Domain.csproj" />
+    <ProjectReference Include="..\Dti.ProductManager.Repository\Dti.ProductManager.Repository.csproj" />
+    <ProjectReference Include="..\Dti.ProductManager.Service\Dti.ProductManager.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="serilogsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

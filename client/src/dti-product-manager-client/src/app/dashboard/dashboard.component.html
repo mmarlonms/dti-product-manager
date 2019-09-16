@@ -1,0 +1,54 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-info card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">content_copy</i>
+                        </div>
+                        <p class="card-category">Quantidade de produtos em Estoque</p>
+                        <h3 class="card-title">{{ quantidadeTotalDeProdutos }} </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Última consulta {{ now }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-success card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">store</i>
+                        </div>
+                        <p class="card-category">Valor total Estoque</p>
+                        <h3 class="card-title">{{ valorTotalDoEstoque  | currency:'BRL':true }} </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Última consulta {{ now }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card card-chart">
+                <div class="card-header card-header-warning">
+                    <div class="ct-chart" id="websiteViewsChart"></div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Quantidade em Estoque</h4>
+                    <p class="card-category">Acompanhamento Geral do Estoque</p>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">date_range</i> Última consulta {{ now }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

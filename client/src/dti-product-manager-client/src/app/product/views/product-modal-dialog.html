@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Produto</h2>
+<mat-dialog-content class="mat-typography">
+
+  <div style="text-align: center" *ngIf="data.urlFoto != '' && data.urlFoto != undefined" >
+    <img src="{{data.urlFoto}}" width="100" height="100">
+  </div>
+  
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.nome" placeholder="Nome" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.valor" placeholder="Valor" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.categoria" placeholder="Categoria">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput type="text" [(ngModel)]="data.descricao" placeholder="Descricao"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="url" [(ngModel)]="data.urlFoto" placeholder="Foto">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput  [(ngModel)]="data.quantidadeDisponivel" placeholder="Quntidade em Estoque" disabled>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput currencyCode  [ngModel]="data.valorTotalEmEstoque | currency:'BRL':true" placeholder="Valor total em estoque" disabled>
+  </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]>Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Salvar</button>
+</mat-dialog-actions>

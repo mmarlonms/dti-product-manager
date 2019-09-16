@@ -1,0 +1,120 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-anger" style="background-color: #00bcd4">
+                        <button mat-mini-fab (click)="openCreateModal()" style="float: right">
+                            <i class="material-icons">add</i>
+                        </button>
+                        <h3 class="card-title ">Produtos</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Nome
+                                    </th>
+                                    <th>
+                                        Valor Unitário
+                                    </th>
+                                    <th>
+                                        Categoria
+                                    </th>
+                                    <th>
+                                        Descriação
+                                    </th>
+                                    <th>
+                                        Quantidade em Estoque
+                                    </th>
+                                    <th>
+                                        Ações
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let produto of produtos">
+                                        <td>
+                                            {{produto.id}}
+                                        </td>
+                                        <td>
+                                            <ng-container
+                                                *ngIf="produto.nome.length > 20; then thenTemplateNome; else elseTemplateNome">
+                                            </ng-container>
+                                            <ng-template #thenTemplateNome>
+                                                {{produto.nome.substring(0,20)}}...
+                                            </ng-template>
+                                            <ng-template #elseTemplateNome>
+                                                {{produto.nome}}
+                                            </ng-template>
+                                        </td>
+                                        <td>
+                                            {{produto.valor | currency:'BRL':true}}
+                                        </td>
+                                        <td>
+                                            {{produto.categoria}}
+                                        </td>
+                                        <td>
+                                            <ng-container
+                                                *ngIf="produto.descricao.length > 30; then thenTemplateDesc; else elseTemplateDesc">
+                                            </ng-container>
+                                            <ng-template #thenTemplateDesc>
+                                                {{produto.descricao.substring(0,30)}}...
+                                            </ng-template>
+                                            <ng-template #elseTemplateDesc>
+                                                {{produto.descricao}}
+                                            </ng-template>
+
+                                        </td>
+                                        <td>
+                                            {{produto.quantidadeDisponivel}}
+                                        </td>
+                                        <td>
+
+
+
+                                            <button mat-mini-fab href="#" data-toggle="dropdown" aria-expanded="true">
+                                                <i class="material-icons">more_vert</i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+
+                                                <li>
+                                                    <button mat-icon-button (click)="openEditModal(produto.id)">
+                                                        &nbsp; <i class="material-icons">create</i> &nbsp;Editar
+                                                    </button>
+
+                                                </li>
+                                                <li>
+                                                    <button mat-icon-button (click)="openDeleteModal(produto.id)">
+                                                        &nbsp;<i class="material-icons">delete_sweep</i>&nbsp;Deletar
+                                                    </button>
+
+                                                </li>
+                                                <li>
+                                                    <button mat-icon-button (click)="openStockModal(produto.id, 'add')">
+                                                        &nbsp;<i
+                                                            class="material-icons">add_shopping_cart</i>&nbsp;Adicionar
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button mat-icon-button
+                                                        (click)="openStockModal(produto.id, 'remove')">
+                                                        &nbsp;<i
+                                                            class="material-icons">remove_shopping_cart</i>&nbsp;Retirar
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

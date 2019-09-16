@@ -1,0 +1,66 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'sonar-dti-product-manager-api'
+    organization: 'mmarlonms'
+    scannerMode: 'MSBuild'
+    projectKey: 'dti-product-manager-api'
+    projectName: 'dti-product-manager-api'
+    extraProperties: 'sonar.cs.vscoveragexml.reportsPaths=d:/a/_temp/TestResults/'
+
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '**/TEST-*.xml'
+
+- task: InlinePowershell@1
+  inputs:
+    Script: |
+      Get-ChildItem -Recurse -Filter "*.coverage" | % {
+      $outfile = "$([System.IO.Path]::GetFileNameWithoutExtension($_.FullName)).coveragexml"
+      $output = [System.IO.Path]::Combine([System.IO.Path]::GetDirectoryName($_.FullName), $outfile)
+      "Analyse '$($_.Name)' with output '$outfile'..."
+      . $env:USERPROFILE\.nuget\packages\microsoft.codecoverage\15.8.0\build\netstandard1.0\CodeCoverage\CodeCoverage.exe analyze /output:$output $_.FullName
+      }
+      "Done"
+
+- task: SonarSource.sonarcloud.ce096e50-6155-4de8-8800-4221aaeed4a1.SonarCloudAnalyze@1
+  displayName: 'Run Code Analysis'
+
+- task: SonarSource.sonarcloud.38b27399-a642-40af-bb7d-9971f69712e8.SonarCloudPublish@1
+  displayName: 'Publish Quality Gate Result'
