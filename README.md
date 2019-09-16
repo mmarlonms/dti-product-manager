@@ -38,7 +38,7 @@ frameworks de desenvolvimento.
 # Dti Product Manager Api
 
 **Solução:**
-------------
+
 
 Para resolver o problema proposto foi utilizado a plataforma .net core por se tratar de um tecnologia em constante evolução e expertise do desenvolver ( no caso eu ) na liguagem. 
 
