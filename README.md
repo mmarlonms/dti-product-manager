@@ -99,7 +99,7 @@ Para este projeto foi utilizado o ORM Entity FrameWork Core por devido às facil
 
 Caso você esteja usando o banco de teste que eu criei no servidor 
 
-[Elepahant SQL](https://customer.elephantsql.com) não é necessário realizar nenhum procedimento, mas,  caso queria alterar o banco é necessário aplicar o comando "update-database" no projeto __Dti.ProductManager.Data__ alterando as configurações do __appsettings.Development__.
+[Elepahant SQL](https://customer.elephantsql.com) não é necessário realizar nenhum procedimento, mas,  caso queria alterar o banco é necessário aplicar o comando "update-database" no projeto __Dti.ProductManager.Data__ alterando as configurações do __appsettings.Development__, ou exeutar o [Script](https://github.com/mmarlonms/dti-product-manager/blob/master/api/docs/Script%20Cria%C3%A7%C3%A3o%20da%20Table%20Produto.sql) em um banco postgree e alterar o __appsettings.Development__.
 
 
 
