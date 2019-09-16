@@ -15,7 +15,7 @@ import 'rxjs/Rx';
 
 export class ProductListComponent implements OnInit {
   produtos: Produto[];
-
+  filtro: string;
   constructor(private pordutoService: ProdutoService, public dialog: MatDialog) { }
 
   ngOnInit() {
@@ -38,6 +38,15 @@ export class ProductListComponent implements OnInit {
         });
       }
     });
+  }
+
+  filtrar(): void {
+    if (this.filtro == undefined || this.filtro == '')
+      this.getProdutos()
+    else {
+      this.pordutoService.getProdutosFilter(this.filtro)
+        .subscribe(data => this.produtos = data);
+    }
   }
 
   openDeleteModal(id: number): void {

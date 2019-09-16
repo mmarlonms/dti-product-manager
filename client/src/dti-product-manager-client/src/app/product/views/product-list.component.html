@@ -1,6 +1,22 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-8">
+                <mat-form-field>
+                    <input matInput [(ngModel)]="filtro" placeholder="Nome do Produto">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <button mat-icon-button (click)="filtrar()">
+                    &nbsp; <i class="material-icons">find_replace</i> &nbsp;Procurar
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-anger" style="background-color: #00bcd4">

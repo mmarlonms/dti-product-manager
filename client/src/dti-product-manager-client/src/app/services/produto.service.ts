@@ -29,6 +29,15 @@ export class ProdutoService {
       );
   }
 
+  getProdutosFilter(filter : string): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.ProdutoesUrl+"/filtrar/"+filter)
+      .pipe(
+        tap(_ => this.log('fetched Produtoes')),
+        catchError(this.handleError<Produto[]>('getProdutosFilter', []))
+      );
+  }
+
+
 
   //////// Save methods //////////
 
