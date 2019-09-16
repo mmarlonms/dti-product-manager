@@ -145,6 +145,8 @@ Dashboard
 <img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Dashboard.PNG">
 Produtos
 <img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Produtos2.PNG">
+Produto Opções
+<img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Produtos-Menu.PNG">
 Novo Produto
 <img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Produtos-Adicionar.PNG">
 Alterar Produto
