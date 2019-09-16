@@ -171,7 +171,7 @@ Foi utilizado as seguintes referências:
 **Execução do projeto**
 
 Para executar o projeto é necessário executar a seguinte api : 
-[dti-product-manager-api](https://github.com/mmarlonms/dti-product-manager-api)
+[dti-product-manager-api](https://github.com/mmarlonms/dti-product-manager/tree/master/api)
 
 Instalar as dependências do projeto executando o comando:
  
