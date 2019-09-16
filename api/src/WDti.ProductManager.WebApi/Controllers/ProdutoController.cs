@@ -34,11 +34,16 @@ namespace WDti.ProductManager.WebApi.Controllers
             return this.produtoService.ObterProduto(id);
         }
 
+        [HttpGet("filtrar/{nome}")]
+        public IEnumerable<Produto> ListarPorNome(string nome)
+        {
+            this.logger.LogInformation("listando por nome {nome}", nome);
+            return this.produtoService.ListarPorNome(nome);
+        }
+
         [HttpPost]
         public Produto CriarProduto([FromBody] Produto produto)
         {
-            throw new System.Exception();
-
             ValidationHelper.ThrowValidationExceptionIfNotValid(produto);
 
             this.logger.LogInformation("Criado produto {@produto}", produto);

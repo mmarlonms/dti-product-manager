@@ -10,6 +10,7 @@ namespace Dti.ProductManager.Domain.Service
         void RemoverProduto(int id);
         Produto ObterProduto(int id);
         IList<Produto> ListarProdutos();
+        IList<Produto> ListarPorNome(string nome);
         void AdicionarQuantidade(int id, int quantidade);
         void RemoverQuantidade(int id, int quantidade);
     }

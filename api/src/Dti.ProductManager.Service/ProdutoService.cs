@@ -2,6 +2,7 @@
 using Dti.ProductManager.Domain.Models;
 using Dti.ProductManager.Domain.Repository;
 using Dti.ProductManager.Domain.Service;
+using Dti.ProductManager.Domain.Specification;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -77,6 +78,11 @@ namespace Dti.ProductManager.Service
                 throw new ProdutoException(ProdutoCoreError.QauntidadeMinima);
 
             this.produtoRepository.RemoverQuantidade(id, quantidade);
+        }
+
+        public IList<Produto> ListarPorNome(string nome)
+        {
+            return this.produtoRepository.ListBySpecfication(ProdutoSpecification.ListarPorNome(nome)).ToList();
         }
     }
 }
