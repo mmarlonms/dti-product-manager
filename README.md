@@ -10,40 +10,40 @@
 
 Eu como estoquista desejo cadastrar/alterar e excluir produtos no meu sistema de estoque.
 
-Desejo as seguintes informaÁıes:
+Desejo as seguintes informa√ß√µes:
 * Nome do produto
 * Quantidade de itens do produto
-* Valor unit·rio do produto
+* Valor unit√°rio do produto
 
-Desejo que seja disponÌvel uma tela de listagem onde eu possa selecionar um produto para exclus„o ou
-ediÁ„o (exibir uma nova tela para ediÁ„o).
+Desejo que seja dispon√≠vel uma tela de listagem onde eu possa selecionar um produto para exclus√£o ou
+edi√ß√£o (exibir uma nova tela para edi√ß√£o).
 
-Nesta tela de listagem tambÈm dever· ser possÌvel chamar uma tela para cadastrar um novo produto.
+Nesta tela de listagem tamb√©m dever√° ser poss√≠vel chamar uma tela para cadastrar um novo produto.
 
 **Requisitos**  :
-A histÛria dever· ser desenvolvida utilizando os seguinte requisitos n„o funcionais:
-1. Linguagem de programaÁ„o: C# ou Java.
+A hist√≥ria dever√° ser desenvolvida utilizando os seguinte requisitos n√£o funcionais:
+1. Linguagem de programa√ß√£o: C# ou Java.
 2. Front-end: Angular 2+ ou React.
 3. Backend: REST WebApi.
-4. PersistÍncia de dados: utilizar algum framework de persistÍncia (Ex.: Entity Framework, Dapper, Spring
+4. Persist√™ncia de dados: utilizar algum framework de persist√™ncia (Ex.: Entity Framework, Dapper, Spring
 JPA, Hibernate...).
-5. Banco de dados: Sqlite ou qualquer outro banco relacional de sua preferÍncia.
+5. Banco de dados: Sqlite ou qualquer outro banco relacional de sua prefer√™ncia.
 6. Frameworks de desenvolvimento: se desejar, pode ser utilizado spring-boot ou quaisquer outros
 frameworks de desenvolvimento.
-7. N„o È necess·rio fazer nenhum tipo de autenticaÁ„o/autorizaÁ„o.
+7. N√£o √© necess√°rio fazer nenhum tipo de autentica√ß√£o/autoriza√ß√£o.
 
 
 
 
 # Dti Product Manager Api
 
-**SoluÁ„o:**
+**Solu√ß√£o:**
 
 
-Para resolver o problema proposto foi utilizado a plataforma .net core por se tratar de um tecnologia em constante evoluÁ„o e expertise do desenvolver ( no caso eu ) na liguagem. 
+Para resolver o problema proposto foi utilizado a plataforma .net core por se tratar de um tecnologia em constante evolu√ß√£o e expertise do desenvolver ( no caso eu ) na liguagem. 
 
-A SoluÁ„o foi desenvolvida seguindo as boas pr·ticas de desenvolvimento  DDD e SOLID. 
-Como Arquitetura de software foi adotado o padr„o **Hexagonal** por possibilitar melhor coes„o e menor acoplamento entre as camadas, facilitando evoluÁıes futuras. Para referÍncias de projetos com arquiteturas exagonais ficam os seguintes links: 
+A Solu√ß√£o foi desenvolvida seguindo as boas pr√°ticas de desenvolvimento  DDD e SOLID. 
+Como Arquitetura de software foi adotado o padr√£o **Hexagonal** por possibilitar melhor coes√£o e menor acoplamento entre as camadas, facilitando evolu√ß√µes futuras. Para refer√™ncias de projetos com arquiteturas exagonais ficam os seguintes links: 
 
 - [Furiza](https://github.com/ivanborges/furiza-aspnetcore "Furiza")
 
@@ -51,7 +51,7 @@ Como Arquitetura de software foi adotado o padr„o **Hexagonal** por possibilitar
 
 - [Opala](https://github.com/OleConsignado/opala "Opala")
 
-Foram utilizadas outras fontes para implementar a soluÁ„o: 
+Foram utilizadas outras fontes para implementar a solu√ß√£o: 
 
 [# Utilizando Log em ASP .NET Core]([https://medium.com/@fernando.abreu/utilizando-log-em-asp-net-core-171e90732ec5](https://medium.com/@fernando.abreu/utilizando-log-em-asp-net-core-171e90732ec5))
 
@@ -81,25 +81,25 @@ O projeto segue com as seguintes camadas:
 
 	Dti.ProductManager.Tests
 
-Onde temos, a camada **Service** Como a camada da regra de negÛcio da aplicaÁ„o, nela est· contida toda a regra envolvida da aplicaÁ„o. 
+Onde temos, a camada **Service** Como a camada da regra de neg√≥cio da aplica√ß√£o, nela est√° contida toda a regra envolvida da aplica√ß√£o. 
 
-A camada **Dominio** È a respons·vel pelo meu domÌnio, nela temos os contratos das interfaces, os objetos de domÌnio e as exceÁıes que meu negÛcio pode gerar.
+A camada **Dominio** √© a respons√°vel pelo meu dom√≠nio, nela temos os contratos das interfaces, os objetos de dom√≠nio e as exce√ß√µes que meu neg√≥cio pode gerar.
 
-A Camada **Infra** È respons·vel pela infra estrutura do projeto. Nela est· contida a parte de contexto e de repositorio da aplicaÁ„o, ambas respons·veis pela persistÍncias dos dados. 
+A Camada **Infra** √© respons√°vel pela infra estrutura do projeto. Nela est√° contida a parte de contexto e de repositorio da aplica√ß√£o, ambas respons√°veis pela persist√™ncias dos dados. 
 
-A camada **Api* por expor os mÈtodos que ser„o consumidos pelo cliente da aplicaÁ„o.
+A camada **Api* por expor os m√©todos que ser√£o consumidos pelo cliente da aplica√ß√£o.
 
-E por ˙ltimo mas n„o menos importante a camada **Testes**, no qual s„o escritos testes automatizados para validar as chamadas de serviÁos.
+E por √∫ltimo mas n√£o menos importante a camada **Testes**, no qual s√£o escritos testes automatizados para validar as chamadas de servi√ßos.
 
-**Requisitos para execuÁ„o do projeto:**
+**Requisitos para execu√ß√£o do projeto:**
 
-O projeto foi desenvolvido na plataforma .net core 2.1 ou seja, È necess·rio este SDK para executa-lo ;).
+O projeto foi desenvolvido na plataforma .net core 2.1 ou seja, √© necess√°rio este SDK para executa-lo ;).
 
-Para este projeto foi utilizado o ORM Entity FrameWork Core por devido ‡s facilidades de se gerenciar o banco de dados.
+Para este projeto foi utilizado o ORM Entity FrameWork Core por devido √†s facilidades de se gerenciar o banco de dados.
 
-Caso vocÍ esteja usando o banco de teste que eu criei no servidor 
+Caso voc√™ esteja usando o banco de teste que eu criei no servidor 
 
-[Elepahant SQL](https://customer.elephantsql.com) n„o È necess·rio realizar nenhum procedimento, mas,  caso queria alterar o banco È necess·rio aplicar o comando "update-database" no projeto __Dti.ProductManager.Data__ alterando as configuraÁıes do __appsettings.Development__.
+[Elepahant SQL](https://customer.elephantsql.com) n√£o √© necess√°rio realizar nenhum procedimento, mas,  caso queria alterar o banco √© necess√°rio aplicar o comando "update-database" no projeto __Dti.ProductManager.Data__ alterando as configura√ß√µes do __appsettings.Development__.
 
 
 
@@ -115,7 +115,7 @@ Para as camadas de infra estrutura
 * MonteOlimpo.Base.Filters 
 * MonteOlimpo.Base.Log
 
-Para a camada de NegÛcio:
+Para a camada de Neg√≥cio:
 
 * MonteOlimpo.Base.Core.Domain
 * MonteOlimpo.Base.Core.Specification
@@ -124,27 +124,27 @@ Para a camada de NegÛcio:
 * MonteOlimpo.Base.Core.Tests
 * MonteOlimpo.Base.Core.Validations
 
-Todas OpenSources disponÌveis no meu [GitHub](https://github.com/mmarlonms)
+Todas OpenSources dispon√≠veis no meu [GitHub](https://github.com/mmarlonms)
 
-Elas ainda est„o em **desenvolvimento** e ainda h· muito que se fazer ( como por exemplo melhorar a documentaÁ„o).
+Elas ainda est√£o em **desenvolvimento** e ainda h√° muito que se fazer ( como por exemplo melhorar a documenta√ß√£o).
 
-Este projeto meu deu a oportunidade de colocas em pr·tica, ent„o, muito obrigado ;) .
+Este projeto meu deu a oportunidade de colocas em pr√°tica, ent√£o, muito obrigado ;) .
 
 
-**Conclus„o**
+**Conclus√£o**
 ------------
 
-O desafio proposto foi muito gratificante de se desenvolver pois pude aplicar diversos conceitos com InjeÁ„o de DependÍncia, arquitetura exagonal e principalmente utilizaÁ„o de testes mocados na aplicaÁ„o, alÈm de outros conceitos. 
+O desafio proposto foi muito gratificante de se desenvolver pois pude aplicar diversos conceitos com Inje√ß√£o de Depend√™ncia, arquitetura exagonal e principalmente utiliza√ß√£o de testes mocados na aplica√ß√£o, al√©m de outros conceitos. 
 
 
 # Dti Product Manager Client
 
-**SoluÁ„o:**
+**Solu√ß√£o:**
 
 Dashboard
 <img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Dashboard.PNG">
 Produtos
-<img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Produtos.PNG">
+<img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Produtos2.PNG">
 Novo Produto
 <img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Produtos-Adicionar.PNG">
 Alterar Produto
@@ -158,22 +158,22 @@ Adicionar Quantidade em Estoque
 Remover Quantidade em Estoque
 <img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Produtos-Menu-Retirar.PNG">
 
-Para resolver o problema proposto foi utilizado a Angular 2 por se tratar de um tecnologia em constante evoluÁ„o e expertise do desenvolver ( no caso eu ) na liguagem. 
+Para resolver o problema proposto foi utilizado a Angular 2 por se tratar de um tecnologia em constante evolu√ß√£o e expertise do desenvolver ( no caso eu ) na liguagem. 
 
-A SoluÁ„o foi desenvolvida seguindo o layout [Material Dashboard](https://www.creative-tim.com/product/material-dashboard) devido ao fato do desenvolvedor n„o ser t„o habituado com o desenvolvimento front end e por falta de tempo de criar componentes reutiliz·veis para front-end.
+A Solu√ß√£o foi desenvolvida seguindo o layout [Material Dashboard](https://www.creative-tim.com/product/material-dashboard) devido ao fato do desenvolvedor n√£o ser t√£o habituado com o desenvolvimento front end e por falta de tempo de criar componentes reutiliz√°veis para front-end.
 
-Foi utilizado as seguintes referÍncias: 
+Foi utilizado as seguintes refer√™ncias: 
 - [Angular Material](https://material.angular.io/](https://material.angular.io/))
 - [Angular 5: Making API calls with the HttpClient service](https://www.metaltoad.com/blog/angular-5-making-api-calls-httpclient-service)
 - [Introduction to services and dependency injection](https://angular.io/guide/architecture-services)
 
 
-**ExecuÁ„o do projeto**
+**Execu√ß√£o do projeto**
 
-Para executar o projeto È necess·rio executar a seguinte api : 
+Para executar o projeto √© necess√°rio executar a seguinte api : 
 [dti-product-manager-api](https://github.com/mmarlonms/dti-product-manager/tree/master/api)
 
-Instalar as dependÍncias do projeto executando o comando:
+Instalar as depend√™ncias do projeto executando o comando:
  
 	npm install
 
@@ -182,35 +182,35 @@ Inciar o servidor local com o comando:
 	npm start
 
 
-**Requisitos para execuÁ„o do projeto:**
+**Requisitos para execu√ß√£o do projeto:**
 
-A Api foi desenvolvida na plataforma .net core 2.1 ou seja, È necess·rio este SDK para executa-lo ;).
+A Api foi desenvolvida na plataforma .net core 2.1 ou seja, √© necess√°rio este SDK para executa-lo ;).
 
-Para este projeto foi utilizado o ORM Entity FrameWork Core por devido ‡s facilidades de se gerenciar o banco de dados.
+Para este projeto foi utilizado o ORM Entity FrameWork Core por devido √†s facilidades de se gerenciar o banco de dados.
 
-Caso vocÍ esteja usando o banco de teste que eu criei no servidor 
+Caso voc√™ esteja usando o banco de teste que eu criei no servidor 
 
-[Elepahant SQL](https://customer.elephantsql.com) n„o È necess·rio realizar nenhum procedimento, mas,  caso queria alterar o banco È necess·rio aplicar o comando "update-database" no projeto __Dti.ProductManager.Data__ alterando as configuraÁıes do __appsettings.Development__.
+[Elepahant SQL](https://customer.elephantsql.com) n√£o √© necess√°rio realizar nenhum procedimento, mas,  caso queria alterar o banco √© necess√°rio aplicar o comando "update-database" no projeto __Dti.ProductManager.Data__ alterando as configura√ß√µes do __appsettings.Development__.
 
-Para a ExecuÁ„o do client È necess·rio possuir o [Nodejs](https://nodejs.org/en/) instalado para a execuÁ„o dos projetos.
+Para a Execu√ß√£o do client √© necess√°rio possuir o [Nodejs](https://nodejs.org/en/) instalado para a execu√ß√£o dos projetos.
 
 **Plus++**
 ------------
 
-Para melhorar o tratamento das exceÁıes geradas pela api, foi criado um filtro de requisiÁıes no qual dispara um mensagem pra tela em caso de exceÁ„o de negÛcio ou exceÁ„o do sistema. 
+Para melhorar o tratamento das exce√ß√µes geradas pela api, foi criado um filtro de requisi√ß√µes no qual dispara um mensagem pra tela em caso de exce√ß√£o de neg√≥cio ou exce√ß√£o do sistema. 
 
-Todas as exceÁıes s„o logadas e armazenas em arquivo. No caso de exceÁıes de car·ter 500 È exibido para usu·rio somente um GUID para que se possa buscar entre os logs o real motivo daquele erro, com isso garantimos que a stake trace n„o ser· exibida.
+Todas as exce√ß√µes s√£o logadas e armazenas em arquivo. No caso de exce√ß√µes de car√°ter 500 √© exibido para usu√°rio somente um GUID para que se possa buscar entre os logs o real motivo daquele erro, com isso garantimos que a stake trace n√£o ser√° exibida.
 
-Erro de negÛcio (400)
+Erro de neg√≥cio (400)
 <img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Produtos-Erro400.PNG">
 Erro Interno (500)
 <img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Produtos-Erro500.PNG">
 Erro Interno (500) - Log
 <img src="https://raw.githubusercontent.com/mmarlonms/dti-product-manager-client/master/docs/Produtos-Erro500-Log.PNG">
 
-**Conclus„o**
+**Conclus√£o**
 ------------
 
-O desafio proposto foi muito gratificante de se desenvolver pois pude aplicar diversos conceitos de front end nos quais j· n„o trabalhava a tempo, tive algumas dificuldades na manipulaÁ„o dos componentes, mas com bastante leitura pude superar os desafios propostos e entregar uma soluÁ„o est·vel. 
+O desafio proposto foi muito gratificante de se desenvolver pois pude aplicar diversos conceitos de front end nos quais j√° n√£o trabalhava a tempo, tive algumas dificuldades na manipula√ß√£o dos componentes, mas com bastante leitura pude superar os desafios propostos e entregar uma solu√ß√£o est√°vel. 
 
-Como melhoria proponho incluir a paginaÁ„o do grid de produtos e desenvolver um layout prÛprio, pois, embora seja mais mais f·cil partir de um layout pronto, tive muita dificuldade ao tentar utilizar alguns componentes do Agular Material. 
+Como melhoria proponho incluir a pagina√ß√£o do grid de produtos e desenvolver um layout pr√≥prio, pois, embora seja mais mais f√°cil partir de um layout pronto, tive muita dificuldade ao tentar utilizar alguns componentes do Agular Material. 
