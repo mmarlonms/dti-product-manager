@@ -30,7 +30,7 @@
     "angular-in-memory-web-api": "0.5.4",
     "@angular/material-moment-adapter": "8.1.4",
     "@angular/platform-browser-dynamic": "8.2.6",
-    "ajv": "6.10.0",
+    "ajv": "6.12.3",
     "angular-datatables": "^8.0.0",
     "arrive": "2.4.1",
     "bootstrap": "4.3.1",
